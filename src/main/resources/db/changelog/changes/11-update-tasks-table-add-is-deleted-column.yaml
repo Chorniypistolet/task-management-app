@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: update-tasks-table-add-is-deleted-column
+      author: ChorniyPistolet
+      changes:
+        - addColumn:
+            tableName: tasks
+            columns:
+              - column:
+                  name: is_deleted
+                  type: TINYINT(1)
+                  defaultValueNumeric: 0
+                  constraints:
+                    nullable: false

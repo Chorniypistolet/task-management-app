@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - changeSet:
+      id: update-attachments-table
+      author: ChorniyPistolet
+      changes:
+        - addColumn:
+            tableName: attachments
+            columns:
+              - column:
+                  name: dropbox_path
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
