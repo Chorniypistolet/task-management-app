@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: update-tasks-table-add-label
+      author: ChorniyPistolet
+      changes:
+        - addColumn:
+            tableName: tasks
+            columns:
+              - column:
+                  name: label_id
+                  type: BIGINT
+                  constraints:
+                    nullable: true
+        - addForeignKeyConstraint:
+            baseTableName: tasks
+            baseColumnNames: label_id
+            referencedTableName: labels
+            referencedColumnNames: id
+            constraintName: fk_tasks_label
